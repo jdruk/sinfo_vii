@@ -1,0 +1,77 @@
+
+<div id="slider">
+      <ul class="orbit-ul" data-orbit="" data-options=" animation: 'fade';bullets: true;timer: true;pause_on_hover: false;navigation_arrows: false;slide_number: false;">
+        <li class="orbit-item orbit-item-1"></li>
+        <li class="orbit-item orbit-item-2"></li>
+        <li class="orbit-item orbit-item-3"></li>
+      </ul>
+</div>
+<div class="row">
+
+  <div class="large-12 columns">
+    <div class="panel">
+      <h4>O que é o SINFO?</h4>
+      <div class="row">
+        <div class="large-12 columns">
+          <p>É o Simpósio de Sistemas de Informação, da Universidade Federal do Piauí, construido pelo conjunto do curso. Em sua sétima edição, que acontecerá <strong>entre os dias 19 e 21</strong> de janeiro de 2016, traz o tema Internet das coisas como discussão central de suas atividades. Serão dispostos espaços de discussão e construção do conhecimento, como palestras e minicursos, além de workshops, start-up's e demais demonstrações tecnológicas.</p>
+          </div>
+
+
+    </div>
+    <%= link_to "Saiba Mais", apresentacao_index_path, class: 'button radius'%>
+
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="large-4 columns">
+    <%= link_to image_tag('MesaRedonda.jpg'), inscricoes_index_path%>
+    <h4>Mesas Redondas</h4>
+    <p>Onde o contraponto de opiniões e vivências que cercam a área da computação é o objetivo central. Nesses espaços, os estudantes terão acesso a uma ampla discussão envolvendo organizações e cientistas, tendo como temáticas: O Marco Civil da Internet; e A perspectiva atual da Internet das coisas.</p>
+  </div>
+
+  <div class="large-4 columns">
+    <%= link_to image_tag('minicurso.png'), inscricoes_index_path%>
+    <h4>Minicursos</h4>
+    <p>
+      Que com mais especifidade, levarão ao participante um conteúdo técnico, detalhado e prático acerca das ferramentas abordadas, que serão: Android; Arduino e robótica Livre; Python; Controle versão; E Muito mais
+    </p>
+  </div>
+
+  <div class="large-4 columns">
+    <%= link_to image_tag('Palestra.jpg'), inscricoes_index_path%>
+    <h4>Palestras</h4>
+    <p>Para que os participantes possam conhecer o trabalho apresentado pelos convidados de maneira mais clara e se atualizarem dos assuntos abordados, podendo desenvolver projetos pessoais ou tirar dúvidas decorrentes destes espaços. As temáticas serão: A Robótica Livre na Educação; A Internet das coisas; Processamento de Imagens e Sistemas Integrados;
+      </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-6 columns">
+    <div class="panel">
+      <h4>Increva-se</h4>
+      <div class="row">
+        <div class="large-8 columns">
+          <p>Garanta sua vaga no SINFO 2015!</p>
+        </div>
+        <div class="large-4 columns">
+           <%= link_to "Inscreva-se", new_user_session_path, class: 'button radius'%>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="large-6 columns">
+    <div class="panel">
+      <h4>Programação</h4>
+      <div class="row">
+        <div class="large-8 columns">
+          <p>Confira nossa programação!</p>
+        </div>
+        <div class="large-4 columns">
+          <%= link_to "Confira",programacao_index_path, class: 'button radius'%>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
