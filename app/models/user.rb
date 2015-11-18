@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   enum role: [:normal_user, :admin]
+  enum status: [:não_confirmado, :confirmado]
   
   #relactions
   has_many :registereds

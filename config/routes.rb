@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   resources :administrators
-  get 'checkout/create'
+  get 'checkout/:id', to: 'checkout#create', as: 'checkout'
+
+  get 'n/:id' => 'notifications#create'
 
   get 'administrator/index'
+
+  get 'registres/painel' => 'registres#painel'
 
   resources :panelists
   resources :courses

@@ -6,7 +6,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def new
   # super
     build_resource({})
-    self.resource.registereds.build 
+    2.times {self.resource.registereds.build }
   end
 
   # POST /resource
