@@ -1,13 +1,16 @@
 class CheckoutController < ApplicationController
+	before_action :authenticate_user!
+
 	def create
 		#pagseguro
+
 		payment = PagSeguro::PaymentRequest.new
 		user = User.find(params[:id])
 
 		
 			payment.reference = user.id
 
-			unless user.shirt.nil?
+			if user.shirt != ''
 				payment.items << {
 					id: 2,
 					description: "Camisa " + user.shirt,
