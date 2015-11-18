@@ -4,8 +4,7 @@ class CheckoutController < ApplicationController
 		payment = PagSeguro::PaymentRequest.new
 		user = User.find(params[:id])
 
-		if  user.token != nil
-
+		
 			payment.reference = user.id
 
 			unless user.shirt.nil?
@@ -54,6 +53,6 @@ class CheckoutController < ApplicationController
 				redirect_to response.url
 			end
 
-		end
+		
 	end
 end
