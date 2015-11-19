@@ -17,6 +17,9 @@ Rails.application.configure do
  
   config.serve_static_assets = true
   config.assets.compile = true
+  
+  config.assets.paths << Rails.root.join( 'vendor', 'assets' )
+  config.assets.precompile << %w( *.gif *.png *.css *.scss )
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
