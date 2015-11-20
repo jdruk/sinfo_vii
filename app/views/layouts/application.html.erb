@@ -5,8 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<title><%= content_for?(:title) ? yield(:title) : "SINFO" %></title>
-
-	<%= stylesheet_link_tag    "application" %>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css" >
+	<%# stylesheet_link_tag    "application" %>
 	<%= javascript_include_tag "vendor/modernizr" %>
 	<%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
