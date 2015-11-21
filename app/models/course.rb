@@ -8,8 +8,8 @@ class Course < ActiveRecord::Base
 	has_many :users,
 		:through => :registereds
 
-	def self.available
-		cursos = Course.all
+	def self.available dia
+		cursos = Course.where( category: dia )
 		confirmados = cursos.to_a.select {|c| c.registereds.where(pay: 1).count < 30 }
-	end	
+	end		
 end
