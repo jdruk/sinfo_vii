@@ -107,7 +107,7 @@
      <%= f.fields_for :registereds do |subf| %>
        <div class="field">
          <%= subf.label :cursos %><br />
-         <%= subf.collection_select :course_id , Course.available, :id, :name, prompt: "Nenhuma" %>
+         <%= subf.collection_select :course_id , Course.available(subf.object.category), :id, :name, prompt: "Nenhuma" %>
        </div>
      <% end %>
      
