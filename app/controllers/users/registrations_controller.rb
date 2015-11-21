@@ -3,10 +3,25 @@ class Users::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  def new
+   def new
   # super
     build_resource({})
-    2.times {self.resource.registereds.build }
+
+    2.times {|value|
+      temp = self.resource.registereds.build
+
+      temp.instance_eval {
+        def category=(value)
+          @value = value
+        end
+        
+        def category
+          @value
+        end
+     }
+
+     temp.category = value 
+   }
   end
 
   # POST /resource
