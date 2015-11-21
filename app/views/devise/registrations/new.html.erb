@@ -73,7 +73,7 @@
      </div>
        
 
-   <h3>Selecione a opçao de inscricao</h3>
+   <h3>Opções de Inscrição</h3>
      <div class="large-4 medium-4 columns">
         <ul class="pricing-table active-tb shadow mrgn-20-top">
           <li class="title">Inscrição Simples</li>
@@ -103,10 +103,9 @@
         </ul>
       </div>
 
-
+      opções de minicursos: <br />
      <%= f.fields_for :registereds do |subf| %>
        <div class="field">
-         <%= subf.label :cursos %><br />
          <%= subf.collection_select :course_id , Course.available(subf.object.category), :id, :name, prompt: "Nenhuma" %>
        </div>
      <% end %>
