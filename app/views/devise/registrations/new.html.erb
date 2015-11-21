@@ -106,10 +106,10 @@
       opções de minicursos: <br />
      <%= f.fields_for :registereds do |subf| %>
        <div class="field">
-         <%= subf.collection_select :course_id , Course.available(subf.object.category), :id, :name, prompt: "Nenhuma" %>
+         <%= subf.collection_select :course_id , Course.available(subf.object.category), :id, :name, prompt: "Nenhum" %>
        </div>
      <% end %>
-     *os minicursos serão inseridos a medida que forem confirmados, totalizando, até o evento, 8 cursos.
+     *os minicursos serão inseridos a medida que forem confirmados, sendo 8 no total.
    
 
 
