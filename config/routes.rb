@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  get 'confirmation/index'
+
   resources :administrators
   get 'checkout/:id', to: 'checkout#create', as: 'checkout'
 
   get 'n/:id' => 'notifications#create'
 
-  get 'administrator/index'
 
   get 'registres/painel' => 'registres#painel'
 
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   resources :contacts
   devise_for :users, :controllers  => {
              :registrations => 'users/registrations',
+             :sessions => 'users/sessions'
              # ...
            }
   resources :minhainscricaos
@@ -21,6 +23,9 @@ Rails.application.routes.draw do
   root 'menu#index'
 
   get 'pay/:id/user' => "checkout#create"
+
+
+  get 'confirma/:id', to: "confirmation#index", as: 'confirmation'
 
   get 'menu/index'
   #get 'painel/admin'

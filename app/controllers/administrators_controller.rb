@@ -8,6 +8,7 @@ class AdministratorsController < ApplicationController
     @users = User.all
     @artigos = Panelist.all
     @courses = Course.all
+    @contacts = Contact.all
     authorize @users
   end
 

@@ -17,5 +17,8 @@ private
 		flash[:alert] = "Você não tem permissão para acessar este item"
 		redirect_to(request.referrer || root_path)
 	end
+
+
+
 end
 
