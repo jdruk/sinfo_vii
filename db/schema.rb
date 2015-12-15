@@ -18,6 +18,15 @@ ActiveRecord::Schema.define(version: 20151118203844) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "adms", force: :cascade do |t|
+    t.string   "nome",       limit: 255
+    t.string   "funcao",     limit: 255
+    t.string   "email",      limit: 255
+    t.string   "senha",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "contacts", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "email",      limit: 255
@@ -30,14 +39,65 @@ ActiveRecord::Schema.define(version: 20151118203844) do
   create_table "courses", force: :cascade do |t|
     t.string   "name",        limit: 255
     t.text     "description", limit: 65535
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
-    t.integer  "category",    limit: 4,     default: 0
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "category",    limit: 4
+  end
+
+  create_table "inscritos", force: :cascade do |t|
+    t.string   "nome",              limit: 255
+    t.string   "cpf",               limit: 255
+    t.string   "indentidade",       limit: 255
+    t.date     "data_nascimento"
+    t.string   "cidade",            limit: 255
+    t.string   "estado",            limit: 255
+    t.string   "telefone",          limit: 255
+    t.string   "instituicaoEnsino", limit: 255
+    t.string   "email",             limit: 255
+    t.string   "senha",             limit: 255
+    t.string   "valor",             limit: 255
+    t.string   "status",            limit: 255
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "minhainscricaos", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "minicursoinscrtrios", force: :cascade do |t|
+    t.datetime "data"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "inscrito_id",  limit: 4
+    t.integer  "minicurso_id", limit: 4
+  end
+
+  create_table "minicursos", force: :cascade do |t|
+    t.string   "titulo",      limit: 255
+    t.string   "ministrante", limit: 255
+    t.string   "vagas",       limit: 255
+    t.float    "preco",       limit: 24
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  create_table "palestrainscritos", force: :cascade do |t|
+    t.datetime "data"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.integer  "inscrito_in", limit: 4
+    t.integer  "palestra_id", limit: 4
+  end
+
+  create_table "palestras", force: :cascade do |t|
+    t.string   "titulo",      limit: 255
+    t.string   "ministrante", limit: 255
+    t.string   "vagas",       limit: 255
+    t.float    "preco",       limit: 24
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "panelists", force: :cascade do |t|
