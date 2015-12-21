@@ -10,6 +10,6 @@ class Course < ActiveRecord::Base
 
 	def self.available dia
 		cursos = Course.where( category: dia )
-		confirmados = cursos.to_a.select {|c| c.registereds.where(pay: 1).count < 3 }
+		confirmados = cursos.to_a.select {|c| c.registereds.where(pay: 1).count < 30 }
 	end		
 end
