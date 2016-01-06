@@ -103,14 +103,13 @@
         </ul>
       </div>
 
-      opções de minicursos: <br />
+      Opções de minicursos(1º campo cursos do dia 19/01 e 2º cursos do dia 20/01: <br />
      <%= f.fields_for :registereds do |subf| %>
        <div class="field">
          <%= subf.collection_select :course_id , Course.available(subf.object.category), :id, :name, prompt: "Nenhum" %>
        </div>
      <% end %>
-     *os minicursos serão inseridos a medida que forem confirmados, sendo 8 no total.
-   
+    
 
 
      <div class="actions">
