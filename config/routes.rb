@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'minicurso/index'
+
   get 'confirmation/index'
 
   resources :administrators

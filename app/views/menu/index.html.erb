@@ -25,6 +25,35 @@
 
 
 <div class="row">
+  <div class="large-6 columns">
+    <div class="panel">
+      <h4>Increva-se</h4>
+      <div class="row">
+        <div class="large-8 columns">
+          <p>Garanta já sua vaga!</p>
+        </div>
+        <div class="large-4 columns">
+           <%= link_to "Inscreva-se", new_user_registration_path, class: 'button radius'%>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="large-6 columns">
+    <div class="panel">
+      <h4>Programação</h4>
+      <div class="row">
+        <div class="large-8 columns">
+          <p>Acompanhe tudo que vai acontecer!</p>
+        </div>
+        <div class="large-4 columns">
+          <%= link_to "Confira",programacao_index_path, class: 'button radius'%>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
   <div class="large-4 columns">
     <%= link_to image_tag('MesaRedonda.jpg'), inscricoes_index_path%>
     <h4>Exposições</h4>
@@ -49,34 +78,6 @@
 
 
 
-
-<div class="row">
-  <div class="large-6 columns">
-    <div class="panel">
-      <h4>Increva-se</h4>
-      <div class="row">
-        <div class="large-8 columns">
-          <p>Garanta sua vaga no SINFO 2015!</p>
-        </div>
-        <div class="large-4 columns">
-           <%= link_to "Inscreva-se", new_user_registration_path, class: 'button radius'%>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="large-6 columns">
-    <div class="panel">
-      <h4>Programação</h4>
-      <div class="row">
-        <div class="large-8 columns">
-          <p>Confira nossa programação!</p>
-        </div>
-        <div class="large-4 columns">
-          <%= link_to "Confira",programacao_index_path, class: 'button radius'%>
-      </div>
-    </div>
-  </div>
-</div>
 
 <div class="row">
   <h4>PALESTRANTES CONFIRMADOS</h4>
