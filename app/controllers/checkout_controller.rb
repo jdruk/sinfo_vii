@@ -12,14 +12,14 @@ class CheckoutController < ApplicationController
 
 			if user.shirt != ''
 				payment.items << {
-					id: 2,
+					id: 200,
 					description: "Camisa " + user.shirt,
 					amount: 22
 				}
 			end 
 
 			payment.items << {
-				id: 1,
+				id: 100,
 				description: "Inscrição Básica",
 				amount: 20
 			}
@@ -34,11 +34,11 @@ class CheckoutController < ApplicationController
 				end
 			end
 
-			chave =4
+			
 			if user.courses.count == 2
 				user.courses.each do |curso|
 					payment.items << {
-						id: chave+1,
+						id: curso.id,
 						amount: 7.5,
 						description: curso.name		
 					}
