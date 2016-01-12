@@ -14,14 +14,14 @@ class CheckoutController < ApplicationController
 				payment.items << {
 					id: 2,
 					description: "Camisa " + user.shirt,
-					amount: 22,
+					amount: 22
 				}
 			end 
 
 			payment.items << {
 				id: 1,
 				description: "Inscrição Básica",
-				amount: 20,
+				amount: 20
 			}
 
 			if user.courses.count == 1
@@ -38,8 +38,9 @@ class CheckoutController < ApplicationController
 				user.courses.each do |curso|
 					payment.items << {
 						id: curso.id,
+						amount: 7.5,
 						description: curso.name,
-						amount: 7.5
+						
 					}
 				end
 			end
