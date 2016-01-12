@@ -34,7 +34,7 @@ class CheckoutController < ApplicationController
 				end
 			end
 
-			chave =1
+			chave =4
 			if user.courses.count == 2
 				user.courses.each do |curso|
 					payment.items << {
