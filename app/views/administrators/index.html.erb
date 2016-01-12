@@ -9,16 +9,16 @@
                           <table>
                                 <thead>
                                   <tr>
-                                    <th>Artigo</th>
-                                    <th>Autor</th>
+                                    <th>Pessoa</th>
+                                    <th>Camisa</th>
                                     <th colspan="2"></th>
                                   </tr> 
                                 </thead>
                                 <tbody>
-                                  <% @artigos.each do |artigo| %>
+                                  <% @users.each do |user| %>
                                     <tr>
-                                      <td><%= artigo.article %></td>
-                                      <td><%= artigo.user.name %></td>
+                                      <td><%= user.name %></td>
+                                      <td><%= user.shirt %></td>
                                       <td><%= link_to 'Exibir', artigo %></td>
                                       <td><%= link_to 'Apagar', artigo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                                     </tr>
