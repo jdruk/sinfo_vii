@@ -34,11 +34,11 @@ class CheckoutController < ApplicationController
 				end
 			end
 
-			id =1
+			chave =1
 			if user.courses.count == 2
 				user.courses.each do |curso|
 					payment.items << {
-						id: id++,
+						id: chave+1,
 						amount: 7.5,
 						description: curso.name		
 					}
