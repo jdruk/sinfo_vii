@@ -29,7 +29,7 @@ class CheckoutController < ApplicationController
 					payment.items << {
 						id: curso.id,
 						description: curso.name,
-						amount: 10fds
+						amount: 10
 					}
 				end
 			end
