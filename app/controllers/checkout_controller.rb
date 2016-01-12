@@ -10,6 +10,12 @@ class CheckoutController < ApplicationController
 		
 			payment.reference = user.id
 
+			payment.items << {
+				id: 100,
+				description: "Inscrição Básica",
+				amount: 20
+			}
+
 			if user.shirt != ''
 				payment.items << {
 					id: 200,
@@ -18,12 +24,6 @@ class CheckoutController < ApplicationController
 				}
 			end 
 
-			payment.items << {
-				id: 100,
-				description: "Inscrição Básica",
-				amount: 20
-			}
-
 			if user.courses.count == 1
 				user.courses.each do |curso|
 					payment.items << {
@@ -31,6 +31,7 @@ class CheckoutController < ApplicationController
 						description: curso.name,
 						amount: 10
 					}
+					puts "Adicinou um"
 				end
 			end
 
@@ -42,6 +43,7 @@ class CheckoutController < ApplicationController
 						amount: 7.5,
 						description: curso.name		
 					}
+					puts "Adicinou dois"
 				end
 			end
 
