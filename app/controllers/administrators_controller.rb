@@ -6,6 +6,7 @@ class AdministratorsController < ApplicationController
   # GET /administrators.json
   def index
     @users = User.all
+    @shirts = User.where(status: 1)
     @artigos = Panelist.all
     @courses = Course.all
     @contacts = Contact.all

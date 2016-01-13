@@ -15,12 +15,13 @@
                                   </tr> 
                                 </thead>
                                 <tbody>
-                                  <% @users.each do |user| %>
+                                  <% @shirts.each do |user| %>
+                                    <% if user.shirt != ''%>
                                     <tr>
                                       <td><%= user.name %></td>
-                                      <td><%= user.shirt %></td>
-                                     
+                                      <td><%= user.shirt %></td>  
                                     </tr>
+                                    <% end %>
                                   <% end %>
                                 </tbody>    
                             </table>
