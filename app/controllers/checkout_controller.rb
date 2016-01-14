@@ -16,10 +16,10 @@ class CheckoutController < ApplicationController
 				amount: 20
 			}
 
-			if user.shirt != ''
+			if user.shirt != '' && user.shirt != nil
 				payment.items << {
 					id: 200,
-					description: "Camisa " + user.shirt,
+					description: "Camisa ",
 					amount: 22
 				}
 			end 
