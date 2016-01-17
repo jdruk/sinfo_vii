@@ -17,3 +17,11 @@
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', administrators_path %>
+
+<hr>
+<p>
+  <h3>Lista de membros confirmados</h3>
+  <% @membros.each do |membro|%>
+    <%= membro.name %><br>
+  <% end %>
+</p
