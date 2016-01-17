@@ -12,6 +12,7 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
+    @membros = @course.registereds.where(pay: 1)
     authorize @course
   end
 
