@@ -3,6 +3,8 @@
 	<H4>Geral</H4>
 	Total de inscritos <%= @membros.count %>
 	<% @membros.each do |membro| %>
-		<%= membro.name %><br>
+		<%= membro.name %>
+		<%= membro.registereds.count %> <br>
+		<br>
 	<% end %>
 </P>
