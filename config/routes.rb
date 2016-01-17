@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get 'registres/painel' => 'registres#painel'
 
+  get 'member', to: 'member#index', as: 'index'
+
   resources :panelists
   resources :courses
   resources :contacts
