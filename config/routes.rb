@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  get 'list/index'
+
   get 'member/index'
 
   get 'minicurso/index'
 
   get 'confirmation/index'
+
+  get 'lista', to: "list#index", as: 'geral'
 
   resources :administrators
   get 'checkout/:id', to: 'checkout#create', as: 'checkout'
