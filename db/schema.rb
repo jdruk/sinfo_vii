@@ -18,47 +18,21 @@ ActiveRecord::Schema.define(version: 20151118203844) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "adms", force: :cascade do |t|
-    t.string   "nome",       limit: 255
-    t.string   "funcao",     limit: 255
-    t.string   "email",      limit: 255
-    t.string   "senha",      limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
   create_table "contacts", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "email",      limit: 255
-    t.string   "telephone",  limit: 255
-    t.text     "obs",        limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "name"
+    t.string   "email"
+    t.string   "telephone"
+    t.text     "obs"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "courses", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.text     "description", limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.integer  "category",    limit: 4
-  end
-
-  create_table "inscritos", force: :cascade do |t|
-    t.string   "nome",              limit: 255
-    t.string   "cpf",               limit: 255
-    t.string   "indentidade",       limit: 255
-    t.date     "data_nascimento"
-    t.string   "cidade",            limit: 255
-    t.string   "estado",            limit: 255
-    t.string   "telefone",          limit: 255
-    t.string   "instituicaoEnsino", limit: 255
-    t.string   "email",             limit: 255
-    t.string   "senha",             limit: 255
-    t.string   "valor",             limit: 255
-    t.string   "status",            limit: 255
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "category",    default: 0
   end
 
   create_table "minhainscricaos", force: :cascade do |t|
@@ -66,91 +40,54 @@ ActiveRecord::Schema.define(version: 20151118203844) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "minicursoinscrtrios", force: :cascade do |t|
-    t.datetime "data"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.integer  "inscrito_id",  limit: 4
-    t.integer  "minicurso_id", limit: 4
-  end
-
-  create_table "minicursos", force: :cascade do |t|
-    t.string   "titulo",      limit: 255
-    t.string   "ministrante", limit: 255
-    t.string   "vagas",       limit: 255
-    t.float    "preco",       limit: 24
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-  end
-
-  create_table "palestrainscritos", force: :cascade do |t|
-    t.datetime "data"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-    t.integer  "inscrito_in", limit: 4
-    t.integer  "palestra_id", limit: 4
-  end
-
-  create_table "palestras", force: :cascade do |t|
-    t.string   "titulo",      limit: 255
-    t.string   "ministrante", limit: 255
-    t.string   "vagas",       limit: 255
-    t.float    "preco",       limit: 24
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-  end
-
   create_table "panelists", force: :cascade do |t|
-    t.string   "article",    limit: 255
-    t.integer  "user_id",    limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "article"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "panelists", ["user_id"], name: "index_panelists_on_user_id", using: :btree
+  add_index "panelists", ["user_id"], name: "index_panelists_on_user_id"
 
   create_table "registereds", force: :cascade do |t|
-    t.integer  "user_id",    limit: 4
-    t.integer  "course_id",  limit: 4
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-    t.integer  "pay",        limit: 4, default: 0
+    t.integer  "user_id"
+    t.integer  "course_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "pay",        default: 0
   end
 
-  add_index "registereds", ["course_id"], name: "index_registereds_on_course_id", using: :btree
-  add_index "registereds", ["user_id"], name: "index_registereds_on_user_id", using: :btree
+  add_index "registereds", ["course_id"], name: "index_registereds_on_course_id"
+  add_index "registereds", ["user_id"], name: "index_registereds_on_user_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "", null: false
-    t.string   "encrypted_password",     limit: 255, default: "", null: false
-    t.string   "reset_password_token",   limit: 255
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",     limit: 255
-    t.string   "last_sign_in_ip",        limit: 255
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
-    t.integer  "role",                   limit: 4,   default: 0
-    t.string   "name",                   limit: 255
-    t.string   "cpf",                    limit: 255
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.integer  "role",                   default: 0
+    t.string   "name"
+    t.string   "cpf"
     t.date     "birthday"
-    t.string   "city",                   limit: 255
-    t.string   "state",                  limit: 255
-    t.string   "telephone",              limit: 255
-    t.string   "institution",            limit: 255
-    t.string   "shirt",                  limit: 255
-    t.integer  "status",                 limit: 4,   default: 0
-    t.string   "token",                  limit: 255
-    t.string   "accommodation",          limit: 255
+    t.string   "city"
+    t.string   "state"
+    t.string   "telephone"
+    t.string   "institution"
+    t.string   "shirt"
+    t.integer  "status",                 default: 0
+    t.string   "token"
+    t.string   "accommodation"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
-  add_foreign_key "panelists", "users"
-  add_foreign_key "registereds", "courses"
-  add_foreign_key "registereds", "users"
 end
